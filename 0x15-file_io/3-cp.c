@@ -18,7 +18,7 @@ char *creates_buffer(char *file)
 	buffer = malloc(sizeof(char) * 1024);
 
 	if (buffer == NULL)
-	{
+{
 		dprintf(STDERR_FILENO,
 			"Error: Can't write to %s\n", file);
 		exit(99);
@@ -55,7 +55,7 @@ void close_file(int fd)
  * If file_from does not exist or cannot be read - exit code 98.
  * If file_to cannot be created or written to - exit code 99.
  * If file_to or file_from cannot be closed - exit code 100.
- */
+*/
 int main(int argc, char *argv[])
 {
 	int from, to, r, w;
@@ -92,7 +92,6 @@ int main(int argc, char *argv[])
 
 		r = read(from, buffer, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
-
 	} while (r > 0);
 
 	free(buffer);
